@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:seeinven/screens/ATemplatePage.dart';
+import 'package:seeinven/screens/DashboardPage.dart';
 import 'package:seeinven/screens/MainMenuPage.dart';
+import 'package:seeinven/screens/MorePage.dart';
+import 'package:seeinven/screens/SearchPage.dart';
+import 'package:seeinven/screens/TagPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -99,6 +103,10 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           // mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()),);}, child: Text('More'),),                    
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => TagPage()),);}, child: Text('Tag'),),                    
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardPage()),);}, child: Text('Dashboard'),),                    
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage()),);}, child: Text('Search'),),                 
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenuPage()),);}, child: Text('Main Menu Page'),),              
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => ATemplatePage()),);}, child: Text('Template Page'),),  
             Text(
