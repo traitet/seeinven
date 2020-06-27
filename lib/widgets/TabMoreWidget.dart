@@ -2,12 +2,8 @@
 // IMPORT
 //==========================================================================
 import 'package:flutter/material.dart';
-import 'package:seeinven/screens/ATemplatePage.dart';
-import 'package:seeinven/widgets/LVVertSearchInvenWidget.dart';
-
-import '../main.dart';
-
-
+import 'package:seeinven/main.dart';
+import 'package:seeinven/screens/MainMenuPage.dart';
 
 //==========================================================================
 // STATE
@@ -19,84 +15,45 @@ class TabMoreWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-//==========================================================================
-// SHOW DEBUG
-//==========================================================================      
-      debugShowCheckedModeBanner: false,      
-//==========================================================================
-// THEME
-//==========================================================================
-      theme: ThemeData(
-        primarySwatch: Theme.of(context).primaryColor,
-      ),
-//==========================================================================
-// HOME
-//==========================================================================
-      home: Scaffold(
-        backgroundColor: Colors.black,
+    return Scaffold(
         appBar: AppBar(
+          title: Text('More'),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyApp()),);},
           ),
-          title: Text('More'),
-          actions: <Widget>[
-            IconButton(onPressed: (){},icon: Icon(Icons.check_box)),
-            IconButton(onPressed: (){},icon: Icon(Icons.tune)),
-            IconButton(onPressed: (){},icon: Icon(Icons.dialpad)),                     
-          ],
-        ),
-//==========================================================================
-// FLOATING ACTION BUTTON
-//==========================================================================        
-        floatingActionButton: FloatingActionButton(
-        onPressed: (){},
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),         
+        actions: <Widget>[
+          IconButton(onPressed: (){},icon: Icon(Icons.person)),                     
+        ],          
+          ),
 
 //==========================================================================
 // BODY
 //==========================================================================
-        body: Container(
-          color: Colors.white,
-          child: Column(children: <Widget>[
+        body: 
+        ListView(
+          children: <Widget>[
 //==========================================================================
-// TITLE
-//==========================================================================            
-            Container(
-              height: 50,
-              alignment: Alignment.centerLeft,
-              color: Theme.of(context).primaryColor,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('Camera',style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-              )),
+// IMAGE
 //==========================================================================
-// TITLE
-//==========================================================================        
-            Container(
-              // height: 50,
-              alignment: Alignment.centerLeft,
-              // color: Theme.of(context).primaryColor,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 8,left: 8),
-                child: Text('Items',style: TextStyle(color: Colors.grey, fontSize: 15, fontWeight: FontWeight.normal)),
-              )),   
+
 //==========================================================================
-// LISTVIEW & CARD * MUST BE COLUMN ON TOP **
+// LIST TILE & TEXT: MY PERFERENCE
+//==========================================================================  
+            ListTile(trailing: Icon(Icons.home),title: Text('Profile'),onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenuPage()),);},),  
+            ListTile(trailing: Icon(Icons.hotel),title: Text('Maintain Inventory'),onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenuPage()),);},),     
+            ListTile(trailing: Icon(Icons.flight),title: Text('Config Storage Location'),onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenuPage()),);},),   
+            ListTile(trailing: Icon(Icons.book),title: Text('Stock Movement Report'),onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenuPage()),);},),   
+            ListTile(trailing: Icon(Icons.people),title: Text('Stock Card'),onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenuPage()),);},),                                                      
+            ListTile(trailing: Icon(Icons.help),title: Text('Need help?'),onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenuPage()),);},),         
+            ListTile(trailing: Icon(Icons.rate_review),title: Text('Rate the app'),),      
+            ListTile(trailing: Icon(Icons.web),title: Text('About'),onTap: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainMenuPage()),);},),         
+
+          ],
 //==========================================================================
-              Expanded(child: Container(
-                color: Colors.white,
-                child: LVVertSearchInvenWidget(
-                  onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => ATemplatePage()),);},
-                ),
-              ))
-       
-          ],),
+// LISTTILE
+//==========================================================================
         ),
-      ),
-    );
+      );
   }
 }

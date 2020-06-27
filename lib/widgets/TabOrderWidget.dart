@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:seeinven/main.dart';
 import 'package:seeinven/screens/ATemplatePage.dart';
 
-import 'package:seeinven/widgets/LVVertSearchInvenWidget.dart';
+import 'package:seeinven/widgets/LVVertSearchOrderWidget.dart';
 
 
 //==========================================================================
 // CLASS
 //==========================================================================
-class TabTagWidget extends StatelessWidget {
-  const TabTagWidget({
+class TabOrderWidget extends StatelessWidget {
+  const TabOrderWidget({
     Key key,
   }) : super(key: key); 
   @override
@@ -24,11 +24,11 @@ class TabTagWidget extends StatelessWidget {
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyApp()),);},
           ),
-          title: Text('Tag'),
+          title: Text('Order'),
           actions: <Widget>[
             IconButton(onPressed: (){},icon: Icon(Icons.check_box)),
             IconButton(onPressed: (){},icon: Icon(Icons.tune)),
-            IconButton(onPressed: (){},icon: Icon(Icons.dialpad)),                     
+            // IconButton(onPressed: (){},icon: Icon(Icons.dialpad)),                     
           ],
         ),
 
@@ -42,31 +42,14 @@ class TabTagWidget extends StatelessWidget {
 //==========================================================================
 // TITLE
 //==========================================================================            
-            Container(
-              height: 50,
-              alignment: Alignment.centerLeft,
-              color: Theme.of(context).primaryColor,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('Camera',style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-              )),
-//==========================================================================
-// TITLE
-//==========================================================================        
-            Container(
-              // height: 50,
-              alignment: Alignment.centerLeft,
-              // color: Theme.of(context).primaryColor,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 8,left: 8),
-                child: Text('Items',style: TextStyle(color: Colors.grey, fontSize: 15, fontWeight: FontWeight.normal)),
-              )),   
+
+ 
 //==========================================================================
 // LISTVIEW & CARD * MUST BE COLUMN ON TOP **
 //==========================================================================
               Expanded(child: Container(
                 color: Colors.white,
-                child: LVVertSearchInvenWidget(
+                child: LVVertSearchOrderWidget(
                   onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => ATemplatePage()),);},
                 ),
               ))

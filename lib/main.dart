@@ -4,7 +4,7 @@ import 'package:seeinven/screens/MainMenuPage.dart';
 
 
 void main() {
-  runApp(MyApp());
+  runApp(MainMenuPage());
 }
 
 class MyApp extends StatelessWidget {

@@ -3,7 +3,7 @@
 //==========================================================================
 import 'package:flutter/material.dart';
 import '../widgets/TabHomeWidget.dart';
-import '../widgets/TabTagWidget.dart';
+import '../widgets/TabOrderWidget.dart';
 import '../widgets/TabSearchWidget.dart';
 import '../widgets/TabMoreWidget.dart';
 import '../widgets/TabDashboardWidget.dart';
@@ -61,7 +61,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
               currentIndex: tabIndex,
               items: [
                 BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Items'), ),
-                BottomNavigationBarItem( icon: Icon(Icons.business_center),title: Text('Tag'),),
+                BottomNavigationBarItem( icon: Icon(Icons.business_center),title: Text('Order'),),
                 BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Search')),
                 BottomNavigationBarItem(icon: Icon(Icons.dashboard), title: Text('Dashboard')),                
                 BottomNavigationBarItem(icon: Icon(Icons.more_horiz), title: Text('More')),
@@ -73,7 +73,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
 //==========================================================================
         body: 
         tabIndex == 0 ? TabHomeWidget():
-        tabIndex == 1 ? TabTagWidget():
+        tabIndex == 1 ? TabOrderWidget():
         tabIndex == 2 ? TabSearchWidget():
         tabIndex == 3 ? DashBoardWidget():         
         tabIndex == 4 ? TabMoreWidget(): 

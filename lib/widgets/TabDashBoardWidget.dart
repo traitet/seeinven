@@ -27,8 +27,8 @@ class DashBoardWidget extends StatelessWidget {
         ),
         title: Text('Dashboard'),
         actions: <Widget>[
-          IconButton(onPressed: (){},icon: Icon(Icons.check_box)),
-          IconButton(onPressed: (){},icon: Icon(Icons.tune)),
+          // IconButton(onPressed: (){},icon: Icon(Icons.check_box)),
+          // IconButton(onPressed: (){},icon: Icon(Icons.tune)),
           IconButton(onPressed: (){},icon: Icon(Icons.dialpad)),                     
         ],
       ),

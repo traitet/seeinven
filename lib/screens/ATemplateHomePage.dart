@@ -3,7 +3,7 @@
 //==========================================================================
 import 'package:flutter/material.dart';
 import '../widgets/TabHomeWidget.dart';
-import '../widgets/TabTagWidget.dart';
+import '../widgets/TabOrderWidget.dart';
 import '../widgets/TabSearchWidget.dart';
 import '../widgets/TabMoreWidget.dart';
 import '../widgets/TabDashboardWidget.dart';
@@ -73,7 +73,7 @@ class _ATemplateHomePageState extends State<ATemplateHomePage> {
 //==========================================================================
         body: 
         tabIndex == 0 ? TabHomeWidget():
-        tabIndex == 1 ? TabTagWidget():
+        tabIndex == 1 ? TabOrderWidget():
         tabIndex == 2 ? TabSearchWidget():
         tabIndex == 3 ? DashBoardWidget():         
         tabIndex == 4 ? TabMoreWidget(): 
