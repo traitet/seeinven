@@ -2,35 +2,29 @@
 // IMPORT
 //==========================================================================
 
-
-
 import 'dart:math';
-
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:seeinven/screens/MainMenuPage.dart';
-import 'package:seeinven/screens/MorePage.dart';
-import 'package:seeinven/screens/TagPage.dart';
+import 'package:seeinven/main.dart';
 import 'package:seeinven/widgets/LVVertSearchInvenWidget.dart';
 import 'package:seeinven/widgets/SearchBarWidget.dart';
 
-// import 'package:seedeal01/widgets/ButtonBarWidget.dart';
-// import 'package:seedeal01/widgets/RadioButtonWidget.dart';
-// import 'package:seedeal01/widgets/TextFieldWidget.dart';
-// import '../models/AppConfigModel.dart';
 
 //==========================================================================
 // CLASS
 //==========================================================================
-class SearchPage extends StatefulWidget {
+class TabSearchWidget extends StatefulWidget {
+  const TabSearchWidget({
+    Key key,
+  }) : super(key: key);  
   @override
-  _SearchPageState createState() => _SearchPageState();
+  _TabSearchWidgetState createState() => _TabSearchWidgetState();
 }
 
 //==========================================================================
 // STATE
 //==========================================================================
-class _SearchPageState extends State<SearchPage> {
+class _TabSearchWidgetState extends State<TabSearchWidget> {
 //==========================================================================
 // SEARCH BAR
 // https://blog.smartnsoft.com/an-automatic-search-bar-in-flutter-flappy-search-bar-a470bc67fa1f
@@ -62,7 +56,7 @@ class _SearchPageState extends State<SearchPage> {
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyApp()),);},
           ),
           title: Text('Search'),
           actions: <Widget>[
@@ -71,37 +65,6 @@ class _SearchPageState extends State<SearchPage> {
             IconButton(onPressed: (){},icon: Icon(Icons.dialpad)),                     
           ],
         ),
-//==========================================================================
-// FLOATING ACTION BUTTON
-//==========================================================================        
-      //   floatingActionButton: FloatingActionButton(
-      //   onPressed: (){},
-      //   tooltip: 'Increment',
-      //   child: Icon(Icons.add),
-      // ),         
-//==========================================================================
-// BUTTOM NAVIGATION BAR
-// www.willowtreeapps.com/ideas/how-to-use-flutter-to-build-an-app-with-bottom-navigation
-//==========================================================================
-            bottomNavigationBar: BottomNavigationBar(
-              onTap: (int index){
-                switch (index) {
-                  case 0: {Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenuPage()),);}break;
-                  case 1: {Navigator.push(context, MaterialPageRoute(builder: (context) => TagPage()),);}break;
-                  case 2: {Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage()),);}break;
-                  case 3: {Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()),);}break;                  
-                  default:
-                }
-              },
-              type: BottomNavigationBarType.fixed,
-              currentIndex: 2,
-              items: [
-                BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Items'), ),
-                BottomNavigationBarItem( icon: Icon(Icons.business_center),title: Text('Tag'),),
-                BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Search')),
-                BottomNavigationBarItem(icon: Icon(Icons.more_horiz), title: Text('More')),
-              ],
-            ),
 
 //==========================================================================
 // BODY
