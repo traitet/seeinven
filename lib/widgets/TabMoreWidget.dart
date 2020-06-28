@@ -9,10 +9,15 @@ import 'package:seeinven/screens/MainMenuPage.dart';
 // STATE
 //==========================================================================
 class TabMoreWidget extends StatelessWidget {
+//==========================================================================
+// CONSTUCTURE
+//==========================================================================  
   const TabMoreWidget({
     Key key,
   }) : super(key: key);
-
+//==========================================================================
+// OVERRIDE BUILD WIDGET
+//==========================================================================
   @override
   Widget build(BuildContext context) {
     return Scaffold(
